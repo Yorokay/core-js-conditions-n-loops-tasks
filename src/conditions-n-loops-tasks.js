@@ -380,7 +380,9 @@ function getSpiralMatrix(size) {
     spiralMatrix[i] = [];
   }
 
-  while (true) {
+  const flag = true;
+
+  while (flag) {
     for (let j = iterator; j < steps; j += 1) {
       spiralMatrix[iterator][j] = number;
       number += 1;
