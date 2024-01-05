@@ -479,22 +479,22 @@ function rotateMatrix(matrix) {
  *  [2, 9, 5, 9]    => [2, 5, 9, 9]
  *  [-2, 9, 5, -3]  => [-3, -2, 5, 9]
  */
-function sortByAsc(/* arr */) {
-  throw new Error('Not implemented');
-  // const sortedArr = arr;
-  // for (let i = 0; i < sortedArr.length - 1; i += 1) {
-  //   let min = sortedArr[i];
-  //   for (let j = i + 1; j < sortedArr.length; j += 1) {
-  //     if (sortedArr[j] < min) {
-  //       const current = sortedArr[j];
-  //       sortedArr[j] = min;
-  //       min = current;
-  //       sortedArr[i] = current;
-  //     }
-  //   }
-  // }
+function sortByAsc(arr) {
+  if (arr.length === 0) return [];
+  const smallArray = [];
+  const bigArray = [];
+  const comparableNumber = arr[0];
 
-  // return sortedArr;
+  for (let i = 1; i < arr.length; i += 1) {
+    if (arr[i] < comparableNumber) smallArray[smallArray.length] = arr[i];
+    else bigArray[bigArray.length] = arr[i];
+  }
+  const array = [
+    ...sortByAsc(smallArray),
+    comparableNumber,
+    ...sortByAsc(bigArray),
+  ];
+  return array;
 }
 
 /**
@@ -560,7 +560,8 @@ function shuffleChar(str, iterations) {
  * @param {number} number The source number
  * @returns {number} The nearest larger number, or original number if none exists.
  */
-function getNearestBigger(number) {
+function getNearestBigger(/* number */) {
+  throw new Error('Not implemented');
   // const stringedNumber = `${number}`;
   // let numberArr = [];
   // for (let k = 0; k < stringedNumber.length; k += 1) {
@@ -578,7 +579,7 @@ function getNearestBigger(number) {
   //   }
 
   // }
-  return number;
+  // return number;
 }
 
 module.exports = {

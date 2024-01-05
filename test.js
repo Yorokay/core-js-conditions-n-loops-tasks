@@ -17,7 +17,7 @@
 
 // console.log(canQueenCaptureKing({ x: 3, y: 5 }, { x: 8, y: 4 }))
 
-function getBalanceIndex(arr) {
+// function getBalanceIndex(arr) {
   // // let isBalanced = false;
   // let result = -1;
 
@@ -46,7 +46,7 @@ function getBalanceIndex(arr) {
   // }
 
   // return result;
-}
+// }
 
 // console.log(getBalanceIndex([0, 0, 0, 0, 0, 0, 0, 0, 55, 99, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
 // console.log(getBalanceIndex([]))
@@ -65,7 +65,7 @@ function getBalanceIndex(arr) {
 
 
 
-function getSpiralMatrix(size) {
+// function getSpiralMatrix(size) {
   // let spiralMatrix = [];
   // let number = 1;
   // let steps = size;
@@ -119,7 +119,7 @@ function getSpiralMatrix(size) {
   // }
 
   // return spiralMatrix;
-}
+// }
 
 // console.log(getSpiralMatrix(5));
 
@@ -250,54 +250,107 @@ function getSpiralMatrix(size) {
 // }
 
 
-function getNearestBigger(number) {
-  const stringedNumber = `${number}`;
-  let numberArr = [];
-  for (let k = 0; k < stringedNumber.length; k += 1) {
-    numberArr[k] = stringedNumber[k];
+// function getNearestBigger(number) {
+//   const stringedNumber = `${number}`;
+//   let numberArr = [];
+//   for (let k = 0; k < stringedNumber.length; k += 1) {
+//     numberArr[k] = stringedNumber[k];
+//   }
+
+//   let originalNumber = Number(numberArr.join(''));
+//   let iterator = 1;
+
+//   while (true) {
+
+//     if (numberArr[numberArr.length - iterator] > numberArr[numberArr.length - (iterator + 1)]) {
+//       let current = numberArr[numberArr.length - iterator];
+//       numberArr[numberArr.length - iterator] = numberArr[numberArr.length - (iterator + 1)];
+//       numberArr[numberArr.length - (iterator + 1)] = current;
+//       break;
+//     }
+
+//     iterator++;
+//   }
+
+//   iterator = 1;
+//   let maxNumberId = numberArr.indexOf(`${Math.max.apply(null, numberArr)}`);
+//   let startNumber = Number(numberArr.join(''));
+//   let currentArr = numberArr;
+//   let deletingArr = numberArr;
+
+//   while (true) {
+//     if (maxNumberId > -1) {
+//       console.log(deletingArr[maxNumberId])
+//     }
+//     let currentNumber = numberArr[numberArr.length - iterator];
+//     currentArr[numberArr.length - iterator] = currentArr[maxNumberId];
+//     currentArr[maxNumberId] = currentNumber;
+
+//     if (Number(currentArr.join('')) < startNumber && Number(currentArr.join('')) > originalNumber) {
+//       break;
+//     }
+
+//     currentArr = numberArr;
+//     deletingArr[maxNumberId] = null;
+//     maxNumberId = deletingArr.indexOf(`${Math.max.apply(null, deletingArr)}`)
+//   }
+
+//   return currentArr;
+// }
+
+// // console.log(getNearestBigger(123450));
+// console.log(getNearestBigger(123450))
+
+// function sortByAsc(arr) {
+  // const sortedArr = arr;
+  // for (let i = 0; i < sortedArr.length - 1; i += 1) {
+  //   let min = sortedArr[i];
+  //   for (let j = i + 1; j < sortedArr.length; j += 1) {
+  //     if (sortedArr[j] < min) {
+  //       const current = sortedArr[j];
+  //       sortedArr[j] = min;
+  //       min = current;
+  //       sortedArr[i] = current;
+  //     }
+  //   }
+  // }
+
+
+  function sortByAsc(arr) {
+    if (arr.length === 0) return [];
+  const smallArray = [];
+  const bigArray = [];
+  const comparableNumber = arr[0];
+
+  for (let i = 1; i < arr.length; i += 1) {
+    if (arr[i] < comparableNumber) smallArray[smallArray.length] = arr[i];
+    else bigArray[bigArray.length] = arr[i];
+  }
+  // const returnedArray = [
+  //   ...sortByAsc(smallArray),
+  //   comparableNumber,
+  //   ...sortByAsc(bigArray),
+  // ];
+  return [...sortByAsc(smallArray), comparableNumber, ...sortByAsc(bigArray)];
   }
 
-  let originalNumber = Number(numberArr.join(''));
-  let iterator = 1;
 
-  while (true) {
 
-    if (numberArr[numberArr.length - iterator] > numberArr[numberArr.length - (iterator + 1)]) {
-      let current = numberArr[numberArr.length - iterator];
-      numberArr[numberArr.length - iterator] = numberArr[numberArr.length - (iterator + 1)];
-      numberArr[numberArr.length - (iterator + 1)] = current;
-      break;
-    }
-
-    iterator++;
+  function getRandomNumberUtil(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
-  iterator = 1;
-  let maxNumberId = numberArr.indexOf(`${Math.max.apply(null, numberArr)}`);
-  let startNumber = Number(numberArr.join(''));
-  let currentArr = numberArr;
-  let deletingArr = numberArr;
-
-  while (true) {
-    if (maxNumberId > -1) {
-      console.log(deletingArr[maxNumberId])
-    }
-    let currentNumber = numberArr[numberArr.length - iterator];
-    currentArr[numberArr.length - iterator] = currentArr[maxNumberId];
-    currentArr[maxNumberId] = currentNumber;
-
-    if (Number(currentArr.join('')) < startNumber && Number(currentArr.join('')) > originalNumber) {
-      break;
-    }
-
-    currentArr = numberArr;
-    deletingArr[maxNumberId] = null;
-    maxNumberId = deletingArr.indexOf(`${Math.max.apply(null, deletingArr)}`)
+  function getRandomArrayUtil(min, max, count) {
+      const arr = [];
+      for (let i = 0; i < count; i += 1) {
+        arr.push(getRandomNumberUtil(min, max));
+      }
+      return arr;
   }
 
-  return currentArr;
-}
+  const min = -100;
+  const max = 100;
+  const length = 7500;
+  const arr = getRandomArrayUtil(min, max, length);
 
-// console.log(getNearestBigger(123450));
-console.log(getNearestBigger(123450))
-
+  console.log(sortByAsc(arr))
