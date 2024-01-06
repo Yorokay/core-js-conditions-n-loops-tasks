@@ -480,21 +480,41 @@ function rotateMatrix(matrix) {
  *  [-2, 9, 5, -3]  => [-3, -2, 5, 9]
  */
 function sortByAsc(arr) {
-  if (arr.length === 0) return [];
-  const smallArray = [];
-  const bigArray = [];
-  const comparableNumber = arr[0];
+  if (arr.length > 0) {
+    const obj = {};
 
-  for (let i = 1; i < arr.length; i += 1) {
-    if (arr[i] < comparableNumber) smallArray[smallArray.length] = arr[i];
-    else bigArray[bigArray.length] = arr[i];
+    for (let i = 0; i < arr.length; i += 1) {
+      if (obj[arr[i]]) {
+        obj[arr[i]] += 1;
+      } else {
+        obj[arr[i]] = 1;
+      }
+    }
+
+    let currentNumber = -100;
+    let counter = 0;
+    let lengthCounter = 0;
+    const sortedArr = arr;
+
+    while (lengthCounter < arr.length) {
+      if (obj[currentNumber]) {
+        sortedArr[lengthCounter] = currentNumber;
+        counter += 1;
+        lengthCounter += 1;
+      } else {
+        currentNumber += 1;
+      }
+
+      if (obj[currentNumber] === counter) {
+        counter = 0;
+        currentNumber += 1;
+      }
+    }
+
+    return sortedArr;
   }
-  const array = [
-    ...sortByAsc(smallArray),
-    comparableNumber,
-    ...sortByAsc(bigArray),
-  ];
-  return array;
+
+  return [];
 }
 
 /**

@@ -315,42 +315,86 @@
   //   }
   // }
 
+  // if (arr.length === 0) return [];
+  // const smallArray = [];
+  // const bigArray = [];
+  // const comparableNumber = arr[0];
 
-  function sortByAsc(arr) {
-    if (arr.length === 0) return [];
-  const smallArray = [];
-  const bigArray = [];
-  const comparableNumber = arr[0];
+  // for (let i = 1; i < arr.length; i += 1) {
+  //   if (arr[i] < comparableNumber) smallArray[smallArray.length] = arr[i];
+  //   else bigArray[bigArray.length] = arr[i];
+  // }
+  // return [...sortByAsc(smallArray), comparableNumber, ...sortByAsc(bigArray)];
 
-  for (let i = 1; i < arr.length; i += 1) {
-    if (arr[i] < comparableNumber) smallArray[smallArray.length] = arr[i];
-    else bigArray[bigArray.length] = arr[i];
-  }
-  // const returnedArray = [
-  //   ...sortByAsc(smallArray),
-  //   comparableNumber,
-  //   ...sortByAsc(bigArray),
-  // ];
-  return [...sortByAsc(smallArray), comparableNumber, ...sortByAsc(bigArray)];
-  }
+  // function sortByAsc(arr) {
+  //   if (arr.length > 0) {
+  //     let obj = {};
+
+  //     for (let i = 0; i < arr.length; i += 1) {
+  //       if (obj[arr[i]]) {
+  //         obj[arr[i]] += 1;
+  //       } else {
+  //         obj[arr[i]] = 1;
+  //       }
+  //     }
+
+  //     let currentNumber = -100;
+  //     let counter = 0;
+  //     let lengthCounter = 0;
+  //     let sortedArr = arr;
+
+  //     while (lengthCounter < arr.length) {
+  //       if (obj[currentNumber]) {
+  //         sortedArr[lengthCounter] = currentNumber;
+  //         counter += 1;
+  //         lengthCounter += 1;
+  //       } else {
+  //         currentNumber += 1;
+  //       }
+
+
+  //       if (obj[currentNumber] === counter) {
+  //         counter = 0;
+  //         currentNumber += 1;
+  //       }
+  //     }
+
+
+  //     return sortedArr;
+  //   }
+
+  //   return [];
+    // else {
+    //   if (arr.length === 0) return [];
+    //   const smallArray = [];
+    //   const bigArray = [];
+    //   const comparableNumber = arr[0];
+
+    //   for (let i = 1; i < arr.length; i += 1) {
+    //     if (arr[i] < comparableNumber) smallArray[smallArray.length] = arr[i];
+    //     else bigArray[bigArray.length] = arr[i];
+    //   }
+    //   return [...sortByAsc(smallArray), comparableNumber, ...sortByAsc(bigArray)];
+    // }
+  // }
 
 
 
-  function getRandomNumberUtil(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  }
+  // function getRandomNumberUtil(min, max) {
+  //   return Math.floor(Math.random() * (max - min + 1) + min);
+  // }
 
-  function getRandomArrayUtil(min, max, count) {
-      const arr = [];
-      for (let i = 0; i < count; i += 1) {
-        arr.push(getRandomNumberUtil(min, max));
-      }
-      return arr;
-  }
+  // function getRandomArrayUtil(min, max, count) {
+  //     const arr = [];
+  //     for (let i = 0; i < count; i += 1) {
+  //       arr.push(getRandomNumberUtil(min, max));
+  //     }
+  //     return arr;
+  // }
 
-  const min = -100;
-  const max = 100;
-  const length = 7500;
-  const arr = getRandomArrayUtil(min, max, length);
+  // const min = -100;
+  // const max = 100;
+  // const length = 7500;
+  // const arr = getRandomArrayUtil(min, max, length);
 
-  console.log(sortByAsc(arr))
+  // console.log(sortByAsc([2, 9, 5, 9] ))
