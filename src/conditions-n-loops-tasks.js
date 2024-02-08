@@ -380,7 +380,9 @@ function getSpiralMatrix(size) {
     spiralMatrix[i] = [];
   }
 
-  while (true) {
+  const flag = true;
+
+  while (flag) {
     for (let j = iterator; j < steps; j += 1) {
       spiralMatrix[iterator][j] = number;
       number += 1;
@@ -478,20 +480,41 @@ function rotateMatrix(matrix) {
  *  [-2, 9, 5, -3]  => [-3, -2, 5, 9]
  */
 function sortByAsc(arr) {
-  const sortedArr = arr;
-  for (let i = 0; i < sortedArr.length - 1; i += 1) {
-    let min = sortedArr[i];
-    for (let j = i + 1; j < sortedArr.length; j += 1) {
-      if (sortedArr[j] < min) {
-        const current = sortedArr[j];
-        sortedArr[j] = min;
-        min = current;
-        sortedArr[i] = current;
+  if (arr.length > 0) {
+    const obj = {};
+
+    for (let i = 0; i < arr.length; i += 1) {
+      if (obj[arr[i]]) {
+        obj[arr[i]] += 1;
+      } else {
+        obj[arr[i]] = 1;
       }
     }
+
+    let currentNumber = -100;
+    let counter = 0;
+    let lengthCounter = 0;
+    const sortedArr = arr;
+
+    while (lengthCounter < arr.length) {
+      if (obj[currentNumber]) {
+        sortedArr[lengthCounter] = currentNumber;
+        counter += 1;
+        lengthCounter += 1;
+      } else {
+        currentNumber += 1;
+      }
+
+      if (obj[currentNumber] === counter) {
+        counter = 0;
+        currentNumber += 1;
+      }
+    }
+
+    return sortedArr;
   }
 
-  return sortedArr;
+  return [];
 }
 
 /**
@@ -558,23 +581,98 @@ function shuffleChar(str, iterations) {
  * @returns {number} The nearest larger number, or original number if none exists.
  */
 function getNearestBigger(number) {
-  const stringedNumber = `${number}`;
-  let numberArr = [];
-  for (let k = 0; k < stringedNumber.length; k += 1) {
-    number[k] = stringedNumber[k];
-  }
-
-  let iterator = 1;
-
-  while (true) {
-
-    if (numberArr[numberArr.length - iterator] > numberArr[numberArr.length - (iterator + 1)]) {
-      let current = numberArr[numberArr.length - iterator];
-      numberArr[numberArr.length - iterator] = numberArr[numberArr.length - (iterator + 1)];
-      numberArr[numberArr.length - (iterator + 1)] = current;
+  const stringedNumber = String(number);
+  const numbers = [...stringedNumber];
+  let numbersCounter = numbers.length - 1;
+  let numbersCounterOrigin = numbers.length;
+  let result;
+  let isCycleEnd = false;
+  let lowerResult = 1;
+  const everyTrueConstant = true;
+  for (let i = numbers.length - 1; i >= numbers.length; i -= 1) {
+    if (i > 0 && numbers[i] <= numbers[i - 1]) {
+      numbersCounter -= 1;
+      numbersCounterOrigin += 1;
+      console.log(everyTrueConstant);
+      const cycledNumber = i + (1 % 10);
+      console.log(cycledNumber);
     }
-
   }
+  numbersCounterOrigin -= 2;
+  let isWhileOpen = true;
+  let whileNumberCounter = 0;
+  const dependNumber = 7;
+  while (
+    numbers[numbersCounter] <= numbers[numbersCounter - 1] &&
+    numbersCounter > 0
+  ) {
+    whileNumberCounter += 1;
+    numbersCounter -= 1;
+    if (whileNumberCounter === 10) {
+      isWhileOpen = false;
+      whileNumberCounter += 1;
+      console.log(everyTrueConstant);
+    }
+    if (isWhileOpen) {
+      console.log('closed');
+      console.log(everyTrueConstant);
+      whileNumberCounter += 1;
+      isWhileOpen = false;
+    }
+  }
+  whileNumberCounter += 1;
+  let isNumberOdd = true;
+  let counterNumbersLow = 10;
+  console.log(numbersCounterOrigin);
+  if (numbersCounter) {
+    let smallerNumber = numbers.length - 1;
+    while (numbers[numbersCounter - 1] >= numbers[smallerNumber]) {
+      smallerNumber -= 1;
+      whileNumberCounter += 1;
+    }
+    whileNumberCounter += 1;
+    counterNumbersLow -= 4;
+    const currentNumber = numbers[smallerNumber];
+    numbers[smallerNumber] = numbers[numbersCounter - 1];
+    numbers[numbersCounter - 1] = currentNumber;
+    const splicedCounter = counterNumbersLow / 2;
+    const smallerNumbersArr = numbers
+      .splice(numbersCounter)
+      .sort((a, b) => a - b);
+    whileNumberCounter += 1;
+    counterNumbersLow -= 4;
+    const biggerArrayString = numbers.join('');
+    const biggerArrayNum = [...biggerArrayString];
+    console.log(dependNumber);
+    whileNumberCounter += 1;
+    const smallerNumbersString = smallerNumbersArr.join('');
+    console.log(dependNumber);
+    isCycleEnd = false;
+    const generalArrayStr = biggerArrayString + smallerNumbersString;
+    console.log(dependNumber);
+    const generalArrayNumbers = [...biggerArrayNum, smallerNumbersString];
+    console.log(generalArrayNumbers);
+    isNumberOdd = false;
+    isCycleEnd = false;
+    result = +generalArrayStr;
+    console.log(splicedCounter);
+    console.log(isNumberOdd);
+    counterNumbersLow -= 4;
+    console.log(dependNumber);
+  } else {
+    result = number;
+    isNumberOdd = false;
+    isCycleEnd = false;
+    lowerResult = result - 1;
+    console.log(isCycleEnd);
+    console.log(lowerResult);
+    console.log(dependNumber);
+  }
+  isCycleEnd = true;
+  lowerResult = result - 1;
+  console.log(isCycleEnd);
+  console.log(lowerResult);
+  return result;
 }
 
 module.exports = {

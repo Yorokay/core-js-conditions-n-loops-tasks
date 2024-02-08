@@ -17,36 +17,32 @@
 
 // console.log(canQueenCaptureKing({ x: 3, y: 5 }, { x: 8, y: 4 }))
 
-function getBalanceIndex(arr) {
-  // // let isBalanced = false;
-  // let result = -1;
-
-  // for (let i = 1; i < arr.length - 1; i += 1) {
-  //   let leftSideSum = 0;
-  //   let rightSideSum = 0;
-  //   // console.log(i)
-  //   for (let j = 0; j < arr.length; j += 1) {
-  //     if (j < i) {
-  //       leftSideSum += arr[j];
-  //       // console.log(leftSideSum);
-  //     }
-
-  //     if (arr.length - (j + 1) > i) {
-  //       rightSideSum += arr[arr.length - (j + 1)];
-  //       // console.log(rightSideSum);
-  //     }
-  //   }
-
-  //   // console.log(leftSideSum);
-  //   // console.log(rightSideSum);
-  //   if (leftSideSum === rightSideSum) {
-  //     result = i;
-  //     break;
-  //   }
-  // }
-
-  // return result;
-}
+// function getBalanceIndex(arr) {
+// // let isBalanced = false;
+// let result = -1;
+// for (let i = 1; i < arr.length - 1; i += 1) {
+//   let leftSideSum = 0;
+//   let rightSideSum = 0;
+//   // console.log(i)
+//   for (let j = 0; j < arr.length; j += 1) {
+//     if (j < i) {
+//       leftSideSum += arr[j];
+//       // console.log(leftSideSum);
+//     }
+//     if (arr.length - (j + 1) > i) {
+//       rightSideSum += arr[arr.length - (j + 1)];
+//       // console.log(rightSideSum);
+//     }
+//   }
+//   // console.log(leftSideSum);
+//   // console.log(rightSideSum);
+//   if (leftSideSum === rightSideSum) {
+//     result = i;
+//     break;
+//   }
+// }
+// return result;
+// }
 
 // console.log(getBalanceIndex([0, 0, 0, 0, 0, 0, 0, 0, 55, 99, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
 // console.log(getBalanceIndex([]))
@@ -63,63 +59,48 @@ function getBalanceIndex(arr) {
 
 // console.log()
 
-
-
-function getSpiralMatrix(size) {
-  // let spiralMatrix = [];
-  // let number = 1;
-  // let steps = size;
-  // let iterator = 0;
-
-  // for (let i = 0; i < size; i += 1) {
-  //   spiralMatrix[i] = [];
-  // }
-
-  // while (true) {
-
-  //   for (let j = iterator; j < steps; j += 1) {
-  //     spiralMatrix[iterator][j] = number;
-  //     number++;
-  //   }
-
-  //   if (number === size ** 2 + 1) {
-  //     break;
-  //   }
-
-  //   steps -= 1;
-
-  //   for (let k = iterator + 1; k <= steps; k += 1) {
-  //     spiralMatrix[k][steps] = number;
-  //     number++;
-  //   }
-
-  //   if (number === size ** 2 + 1) {
-  //     break;
-  //   }
-
-  //   for (let l = steps - 1; l >= iterator; l -= 1) {
-  //     spiralMatrix[steps][l] = number;
-  //     number++;
-  //   }
-
-  //   if (number === size ** 2 + 1) {
-  //     break;
-  //   }
-
-  //   for (let m = steps - 1; m > iterator; m -= 1) {
-  //     spiralMatrix[m][iterator] = number;
-  //     number++;
-  //   }
-
-  //   if (number === size ** 2 + 1) {
-  //     break;
-  //   }
-
-  //   iterator++;
-  // }
-
-  // return spiralMatrix;
-}
+// function getSpiralMatrix(size) {
+// let spiralMatrix = [];
+// let number = 1;
+// let steps = size;
+// let iterator = 0;
+// for (let i = 0; i < size; i += 1) {
+//   spiralMatrix[i] = [];
+// }
+// while (true) {
+//   for (let j = iterator; j < steps; j += 1) {
+//     spiralMatrix[iterator][j] = number;
+//     number++;
+//   }
+//   if (number === size ** 2 + 1) {
+//     break;
+//   }
+//   steps -= 1;
+//   for (let k = iterator + 1; k <= steps; k += 1) {
+//     spiralMatrix[k][steps] = number;
+//     number++;
+//   }
+//   if (number === size ** 2 + 1) {
+//     break;
+//   }
+//   for (let l = steps - 1; l >= iterator; l -= 1) {
+//     spiralMatrix[steps][l] = number;
+//     number++;
+//   }
+//   if (number === size ** 2 + 1) {
+//     break;
+//   }
+//   for (let m = steps - 1; m > iterator; m -= 1) {
+//     spiralMatrix[m][iterator] = number;
+//     number++;
+//   }
+//   if (number === size ** 2 + 1) {
+//     break;
+//   }
+//   iterator++;
+// }
+// return spiralMatrix;
+// }
 
 // console.log(getSpiralMatrix(5));
 
@@ -150,9 +131,7 @@ function getSpiralMatrix(size) {
 
 // console.log(rotateMatrix([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))
 
-
 // function sortByAsc(arr) {
-
 
 //   for (let i = 0; i < arr.length - 1; i += 1) {
 //     let min = arr[i];
@@ -176,7 +155,6 @@ function getSpiralMatrix(size) {
 //   let newStr = str;
 //   let iter = iterations;
 
-
 //   function getNewString(str) {
 //     let lastStr = '';
 //     let sortedStr = '';
@@ -194,8 +172,6 @@ function getSpiralMatrix(size) {
 //     return newStr;
 //   }
 
-
-
 //   while (iter > 0) {
 //     newStr = getNewString(newStr);
 
@@ -204,7 +180,6 @@ function getSpiralMatrix(size) {
 //     }
 
 //     iter -= 1;
-
 
 //   }
 
@@ -249,55 +224,146 @@ function getSpiralMatrix(size) {
 //     ('(6,9)=>{4 5=9;4 3=6;7 a=6;4 8=f;b(4 i=0;i<5;i+=1){b(4 j=1;j<3.g/2+1;j+=1){7 c=3[j];3=3.d(0,j)+3.d(j+1);3+=c}h(3===a&&!8){8=k;7 e=l.m(5/(i+1));5-=e*(i+1);i=-1}}n 3}', 24, 24, '|||source|let|counter|str|const|flagInputStringEquality|iteration|etalon|for|temp|substring|countMin|false|length|if|||true|Math|floor|return'.split('|'), 0, {}))(str, iteration);
 // }
 
-
 function getNearestBigger(number) {
-  const stringedNumber = `${number}`;
-  let numberArr = [];
-  for (let k = 0; k < stringedNumber.length; k += 1) {
-    numberArr[k] = stringedNumber[k];
-  }
+  // const stringedNumber = `${number}`;
+  // const numberArr = [];
+  // for (let k = 0; k < stringedNumber.length; k += 1) {
+  //   numberArr[k] = stringedNumber[k];
+  // }
 
-  let originalNumber = Number(numberArr.join(''));
-  let iterator = 1;
+  // const originalNumber = Number(numberArr.join(''));
+  // let iterator = 1;
 
-  while (true) {
+  // while (true) {
+  //   if (
+  //     numberArr[numberArr.length - iterator] >
+  //     numberArr[numberArr.length - (iterator + 1)]
+  //   ) {
+  //     const current = numberArr[numberArr.length - iterator];
+  //     numberArr[numberArr.length - iterator] =
+  //       numberArr[numberArr.length - (iterator + 1)];
+  //     numberArr[numberArr.length - (iterator + 1)] = current;
+  //     break;
+  //   }
 
-    if (numberArr[numberArr.length - iterator] > numberArr[numberArr.length - (iterator + 1)]) {
-      let current = numberArr[numberArr.length - iterator];
-      numberArr[numberArr.length - iterator] = numberArr[numberArr.length - (iterator + 1)];
-      numberArr[numberArr.length - (iterator + 1)] = current;
-      break;
-    }
+  //   iterator += 1;
+  // }
 
-    iterator++;
-  }
+  // iterator = 1;
+  // let maxNumberId = numberArr.indexOf(`${Math.max.apply(null, numberArr)}`);
+  // const startNumber = Number(numberArr.join(''));
+  // let currentArr = numberArr;
+  // const deletingArr = numberArr;
 
-  iterator = 1;
-  let maxNumberId = numberArr.indexOf(`${Math.max.apply(null, numberArr)}`);
-  let startNumber = Number(numberArr.join(''));
-  let currentArr = numberArr;
-  let deletingArr = numberArr;
+  // while (true) {
+  //   if (maxNumberId > -1) {
+  //     console.log(deletingArr[maxNumberId]);
+  //   }
+  //   const currentNumber = numberArr[numberArr.length - iterator];
+  //   currentArr[numberArr.length - iterator] = currentArr[maxNumberId];
+  //   currentArr[maxNumberId] = currentNumber;
 
-  while (true) {
-    if (maxNumberId > -1) {
-      console.log(deletingArr[maxNumberId])
-    }
-    let currentNumber = numberArr[numberArr.length - iterator];
-    currentArr[numberArr.length - iterator] = currentArr[maxNumberId];
-    currentArr[maxNumberId] = currentNumber;
+  //   if (
+  //     Number(currentArr.join('')) < startNumber &&
+  //     Number(currentArr.join('')) > originalNumber
+  //   ) {
+  //     break;
+  //   }
 
-    if (Number(currentArr.join('')) < startNumber && Number(currentArr.join('')) > originalNumber) {
-      break;
-    }
+  //   currentArr = numberArr;
+  //   deletingArr[maxNumberId] = null;
+  //   maxNumberId = deletingArr.indexOf(`${Math.max.apply(null, deletingArr)}`);
+  // }
 
-    currentArr = numberArr;
-    deletingArr[maxNumberId] = null;
-    maxNumberId = deletingArr.indexOf(`${Math.max.apply(null, deletingArr)}`)
-  }
+  // return currentArr;
 
-  return currentArr;
+  const stringedNumber = String(number);
+  const numbers = [...stringedNumber];
+  return numbers;
 }
 
 // console.log(getNearestBigger(123450));
-console.log(getNearestBigger(123450))
+console.log(getNearestBigger(123450));
 
+// const stringedNumber = String(number);
+// const numbers = [...stringedNumber];
+// let numbersCounter = numbers.length - 1;
+// let result;
+// for (let i = numbers.length - 1; i >= numbers.length; i -= 1) {
+//   if (numbersCounter > 0 && numbers[i] <= numbers[i - 1]) {
+//     numbersCounter -= 1;
+//   }
+// }
+// if (numbersCounter) {
+//   let smallerNumber = numbers.length - 1;
+//   while (numbers[numbersCounter - 1] >= numbers[smallerNumber]) {
+//     smallerNumber -= 1;
+//   }
+//   const currentNumber = numbers[smallerNumber];
+//   numbers[smallerNumber] = numbers[numbersCounter - 1];
+//   numbers[numbersCounter - 1] = currentNumber;
+//   const smallerNumbersArr = numbers
+//     .slice(numbersCounter)
+//     .sort((a, b) => a - b);
+// const biggerNumbersString = numbers.join('');
+// const biggerNumbers = biggerNumbersString.split();
+// const smallerNumbersString = smallerNumbersArr.join('');
+// const generalNumbersString = biggerNumbersString + smallerNumbersString;
+// const generalNumbersArr = biggerNumbers.concat(smallerNumbersArr);
+// console.log(generalNumbersString, generalNumbersArr[0]);
+// result = +generalNumbersArr[0];
+// result = JSON.parse(`${numbers.join('')}${smallerNumbersArr.join('')}`);
+// if (
+//   generalNumbersString.split('').join('') === generalNumbersArr.join('')
+// ) {
+//   result = generalNumbersArr;
+// }
+// } else {
+//   result = number;
+// }
+// return result;
+
+console.log();
+
+// const stringedNumber = String(number);
+// const numbers = [...stringedNumber];
+// let numbersCounter = numbers.length - 1;
+// let result;
+// for (let i = numbers.length - 1; i >= numbers.length; i -= 1) {
+//   if (numbersCounter > 0 && numbers[i] <= numbers[i - 1]) {
+//     numbersCounter -= 1;
+//   }
+// }
+// while (
+//   numbers[numbersCounter] <= numbers[numbersCounter - 1] &&
+//   numbersCounter > 0
+// ) {
+//   numbersCounter -= 1;
+// }
+// if (numbersCounter) {
+//   let smallerNumber = numbers.length - 1;
+//   while (numbers[numbersCounter - 1] >= numbers[smallerNumber]) {
+//     smallerNumber -= 1;
+//   }
+//   const currentNumber = numbers[smallerNumber];
+//   numbers[smallerNumber] = numbers[numbersCounter - 1];
+//   numbers[numbersCounter - 1] = currentNumber;
+//   const smallerNumbersArr = numbers.splice(numbersCounter).sort();
+//   result = JSON.parse(smallerNumbersArr);
+// const biggerNumbersString = numbers.join('');
+// const biggerNumbers = biggerNumbersString.split();
+// const smallerNumbersString = smallerNumbersArr.join('');
+// const generalNumbersString = biggerNumbersString + smallerNumbersString;
+// const generalNumbersArr = biggerNumbers.concat(smallerNumbersArr);
+// console.log(generalNumbersString, generalNumbersArr[0]);
+// result = +generalNumbersArr[0];
+// result = JSON.parse(`${numbers.join('')}${smallerNumbersArr.join('')}`);
+// if (
+//   generalNumbersString.split('').join('') === generalNumbersArr.join('')
+// ) {
+//   result = generalNumbersArr;
+// }
+// } else {
+//   result = number;
+// }
+// return result;
