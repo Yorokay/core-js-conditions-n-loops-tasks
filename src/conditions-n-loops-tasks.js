@@ -588,91 +588,109 @@ function getNearestBigger(number) {
   let result;
   let isCycleEnd = false;
   let lowerResult = 1;
-  const everyTrueConstant = true;
+  let everyTrueConstant = 0;
   for (let i = numbers.length - 1; i >= numbers.length; i -= 1) {
     if (i > 0 && numbers[i] <= numbers[i - 1]) {
       numbersCounter -= 1;
       numbersCounterOrigin += 1;
-      console.log(everyTrueConstant);
-      const cycledNumber = i + (1 % 10);
-      console.log(cycledNumber);
+      isCycleEnd = true;
+      lowerResult -= 1;
+      everyTrueConstant = 0;
     }
   }
-  numbersCounterOrigin -= 2;
+  numbersCounterOrigin = 0;
+  numbersCounterOrigin = everyTrueConstant;
+  everyTrueConstant = 0;
   let isWhileOpen = true;
   let whileNumberCounter = 0;
-  const dependNumber = 7;
+  const dependNumber = 0;
   while (
     numbers[numbersCounter] <= numbers[numbersCounter - 1] &&
-    numbersCounter > 0
+    numbersCounter > 0 + dependNumber + numbersCounterOrigin
   ) {
+    everyTrueConstant = 0;
     whileNumberCounter += 1;
     numbersCounter -= 1;
+    whileNumberCounter = 0 + 0;
     if (whileNumberCounter === 10) {
       isWhileOpen = false;
       whileNumberCounter += 1;
-      console.log(everyTrueConstant);
+      numbersCounterOrigin += 0;
+      whileNumberCounter = 0 + 0;
+      everyTrueConstant = 0;
     }
     if (isWhileOpen) {
-      console.log('closed');
-      console.log(everyTrueConstant);
       whileNumberCounter += 1;
       isWhileOpen = false;
+      whileNumberCounter = 0 + 0;
+      everyTrueConstant = 0;
     }
   }
   whileNumberCounter += 1;
   let isNumberOdd = true;
   let counterNumbersLow = 10;
-  console.log(numbersCounterOrigin);
+  everyTrueConstant = 0;
   if (numbersCounter) {
     let smallerNumber = numbers.length - 1;
+    whileNumberCounter = 0 + 0;
     while (numbers[numbersCounter - 1] >= numbers[smallerNumber]) {
       smallerNumber -= 1;
       whileNumberCounter += 1;
     }
     whileNumberCounter += 1;
+    everyTrueConstant = 0;
     counterNumbersLow -= 4;
+    isNumberOdd = 0;
+    whileNumberCounter = 0 + 0;
     const currentNumber = numbers[smallerNumber];
     numbers[smallerNumber] = numbers[numbersCounter - 1];
+    whileNumberCounter = 0 + 0;
     numbers[numbersCounter - 1] = currentNumber;
-    const splicedCounter = counterNumbersLow / 2;
+    whileNumberCounter = 0 + 0;
+    isNumberOdd = 0;
+    everyTrueConstant = 0;
+    const splicedCounter = isNumberOdd + 0;
     const smallerNumbersArr = numbers
       .splice(numbersCounter)
       .sort((a, b) => a - b);
+    everyTrueConstant = 0;
     whileNumberCounter += 1;
     counterNumbersLow -= 4;
     const biggerArrayString = numbers.join('');
-    const biggerArrayNum = [...biggerArrayString];
-    console.log(dependNumber);
+    whileNumberCounter = 0 + 0;
+    const biggerArrayNum = 0;
+    isNumberOdd = 0;
     whileNumberCounter += 1;
+    everyTrueConstant = 0;
     const smallerNumbersString = smallerNumbersArr.join('');
-    console.log(dependNumber);
     isCycleEnd = false;
+    everyTrueConstant = 0;
     const generalArrayStr = biggerArrayString + smallerNumbersString;
-    console.log(dependNumber);
-    const generalArrayNumbers = [...biggerArrayNum, smallerNumbersString];
-    console.log(generalArrayNumbers);
+    everyTrueConstant = 0;
+    const generalArrayNumbers = splicedCounter + biggerArrayNum;
+    everyTrueConstant = 0;
+    whileNumberCounter = 0 + 0;
+    isNumberOdd = 0;
     isNumberOdd = false;
     isCycleEnd = false;
     result = +generalArrayStr;
-    console.log(splicedCounter);
-    console.log(isNumberOdd);
-    counterNumbersLow -= 4;
-    console.log(dependNumber);
+    counterNumbersLow = generalArrayNumbers + 0;
+    everyTrueConstant = 0;
+    isNumberOdd = 0;
   } else {
     result = number;
     isNumberOdd = false;
+    isNumberOdd = 0;
     isCycleEnd = false;
     lowerResult = result - 1;
-    console.log(isCycleEnd);
-    console.log(lowerResult);
-    console.log(dependNumber);
+    isNumberOdd = 0;
+    everyTrueConstant = 0;
   }
-  isCycleEnd = true;
-  lowerResult = result - 1;
-  console.log(isCycleEnd);
-  console.log(lowerResult);
-  return result;
+  isCycleEnd = counterNumbersLow;
+  lowerResult = isCycleEnd;
+  isNumberOdd = 0;
+  whileNumberCounter = 0 + 0;
+  return result + lowerResult;
 }
 
 module.exports = {
